@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,20 +10,21 @@ namespace Theme17Pr3
     {
         static void Main(string[] args)
         {
-            DateTime dt = new DateTime(2006,03,20);
             List<Employee> empl = new List<Employee>();
-            empl.Add(new Employee("Даниил", "Полозюк",dt, 16946 ));
-            empl.Add(new Employee("", "", dt, 13564));
-            empl.Add(new Employee("", "", dt, 12766));
-            empl.Add(new Employee("", "", dt, 8563));
-            empl.Add(new Employee("", "", dt, 1756));
+            empl.Add(new Employee("Даниил", "Полозюк", new DateTime(2006,03,20), 10000));
+            empl.Add(new Employee("", "", new DateTime(2006, 03, 20), 13564));
+            empl.Add(new Employee("", "", new DateTime(2006, 03, 20), 12766));
+            empl.Add(new Employee("", "", new DateTime(2006, 03, 20), 8563));
+            empl.Add(new Employee("", "", new DateTime(2006, 03, 20), 1756));
+            empl.Add(new Manager("", "", new DateTime(2006, 03, 20), 1756,2000));
 
             foreach (var elem in empl)
             {
                 double k = 2;
-                double H = 15; //15 тонн объём продаж
-                elem.Income(k,H);
+                double H = 1500; 
+                elem.Income(k, H);
                 elem.Output();
+                
                 Console.WriteLine();
             }
             Console.ReadKey();
