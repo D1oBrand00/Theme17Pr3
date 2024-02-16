@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,7 +57,7 @@ namespace Theme17Pr3
         /// </summary>
         /// <param name="k">повышающий коэффициент</param>
         /// <returns></returns>
-        virtual public double Income(double k,double H)
+        virtual public double Income(double k, double H)
         {
             return p * k;
         }
