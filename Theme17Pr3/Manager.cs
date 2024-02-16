@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +28,7 @@ namespace Theme17Pr3
         /// <param name="birthDate">Дата рождения</param>
         /// <param name="p">Минимальная зарплата</param>
         /// <param name="volumeofSales">Объём продаж(в тоннах)</param>
-        public Manager(string name, string surname, DateTime birthDate, int p, int volumeofSales) : base (name, surname, birthDate, p)
+        public Manager(string name, string surname, DateTime birthDate, int p, int volumeofSales) : base(name, surname, birthDate, p)
         {
             this.volumeofSales = volumeofSales;
         }
@@ -38,9 +38,17 @@ namespace Theme17Pr3
         /// <returns></returns>
         public override double Income(double k, double H)
         {
-            if(volumeofSales > H)
-            { return base.Income() + (H * 0.01); }
-            else { return base.Income(); }
+            if (volumeofSales > H)
+            { return base.Income(k,H) + (H * 0.01); }
+            else { return base.Income(k,H); }
+        }
+        /// <summary>
+        /// Метод вывода информации
+        /// </summary>
+        public override void Output()
+        {
+            base.Output();
+            Console.WriteLine($"Объём продаж - {volumeofSales}\nДоход менеджера в зависимости от обьъёма продаж - {Income()}");
         }
     }
 }
